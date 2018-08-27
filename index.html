@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Hair Salons in Almere</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="map-canvas"></div>
+  <div id="search-container">
+      <div id="search-nav">    
+          <input id="input" placeholder="Search…" type="input" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off"></input>
+          <div id="scroller">
+              <ul data-bind="template: {name: 'marker', foreach:markers}">
+              </ul>
+              <script type="text/html" id="marker">
+                  <div data-bind="visible: visible">
+                      <a href="#" data-bind="attr: {id: id}">
+                          <li>
+                              <strong data-bind="text: title"></strong>
+                              <p data-bind="text: streetAddress"></p>
+                              <p data-bind="text: cityAddress"></p> 
+                          </li>
+                      </a>
+                  </div>
+              </script>    
+          </div>
+      </div> 
+
+  <!-- Start of StatCounter Code for Default Guide -->
+  <script type="text/javascript">
+    var sc_project=10304038; 
+    var sc_invisible=1; 
+    var sc_security="03b3a4d8"; 
+    var scJsHost = (("https:" == document.location.protocol) ?
+    "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+  </script>
+  <noscript><div class="statcounter"><a title="web analytics"
+  href="http://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="http://c.statcounter.com/10304038/0/03b3a4d8/1/"
+  alt="web analytics"></a></div></noscript>
+  <!-- End of StatCounter Code for Default Guide -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCVzYqt4JIDK3C_xMQcNssaEKeDUxf45aA"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
