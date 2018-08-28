@@ -20,36 +20,13 @@
     function initMap() {
      map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 52.367661, lng: 5.190724},
-      zoom: 13
+      zoom: 15
      });
     }
    </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAahyqraeNNHKkhIAY4u6NTtr-Cwnxo7gg&callback=initMap"
   type="text/javascript"></script>
-   
-  <div id="map-canvas"></div>
-  <div id="search-container">
-      <div id="search-nav">    
-          <input id="input" placeholder="Search…" type="input" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off"></input>
-          <div id="scroller">
-              <ul data-bind="template: {name: 'marker', foreach:markers}">
-              </ul>
-              <script type="text/html" id="marker">
-                  <div data-bind="visible: visible">
-                      <a href="#" data-bind="attr: {id: id}">
-                          <li>
-                              <strong data-bind="text: title"></strong>
-                              <p data-bind="text: streetAddress"></p>
-                              <p data-bind="text: cityAddress"></p> 
-                          </li>
-                      </a>
-                  </div>
-              </script>    
-          </div>
-      </div> 
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCVzYqt4JIDK3C_xMQcNssaEKeDUxf45aA"></script>
+
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
   <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
