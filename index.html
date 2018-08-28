@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Hair Salons in Almere</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
    
   <style type="text/css">
      html, body { height: 100%; margin: 0; padding: 0; }
@@ -13,6 +16,7 @@
  <body>
    <div id="map"></div>
    <script>
+
     var markers = [];
     
     var map; 
@@ -20,9 +24,8 @@
      map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 52.367661, lng: 5.190724},
       zoom: 15
-     });
-    }
-
+    });
+    
     var locations = [
      {title: 'Behind The Mirror', location: {lat: 52.368123, lng: 5.187447}},
      {title: 'Salon Bibob', location: {lat: 52.371084, lng: 5.179398}},
@@ -44,7 +47,6 @@
       id: i
      });
      markers.push(marker);
-
      marker.addListener('click', function() {
       populateInfoWindow(this, largeInfoWindow);
      });
@@ -59,13 +61,38 @@
        infowindow.setMarker(null);
       });
      }
-
     }
     
    </script>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAahyqraeNNHKkhIAY4u6NTtr-Cwnxo7gg&callback=initMap"
   type="text/javascript"></script>
-
+   
+  <div id="map-canvas"></div>
+  <div id="search-container">
+      <div id="search-nav">    
+          <input id="input" placeholder="Search…" type="input" data-bind="textInput: query, valueUpdate: 'keydown'" autocomplete="off"></input>
+          <div id="scroller">
+              <ul data-bind="template: {name: 'marker', foreach:markers}">
+              </ul>
+              <script type="text/html" id="marker">
+                  <div data-bind="visible: visible">
+                      <a href="#" data-bind="attr: {id: id}">
+                          <li>
+                              <strong data-bind="text: title"></strong>
+                              <p data-bind="text: streetAddress"></p>
+                              <p data-bind="text: cityAddress"></p> 
+                          </li>
+                      </a>
+                  </div>
+              </script>    
+          </div>
+      </div> 
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCVzYqt4JIDK3C_xMQcNssaEKeDUxf45aA"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
 
 </body>
 </html>
