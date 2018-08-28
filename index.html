@@ -1,14 +1,32 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Hair Salons in Almere</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+   
+  <style type="text/css">
+     html, body { height: 100%; margin: 0; padding: 0; }
+     #map { height: 100%; }
+   </style>
+ </head>
+ <body>
+   <div id="map"></div>
+   <script>
+    var map; 
+    function initMap() {
+     map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 52.367661, lng: 5.190724},
+      zoom: 13
+     });
+    }
+   </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAahyqraeNNHKkhIAY4u6NTtr-Cwnxo7gg&callback=initMap"
+  type="text/javascript"></script>
+   
   <div id="map-canvas"></div>
   <div id="search-container">
       <div id="search-nav">    
@@ -29,24 +47,7 @@
               </script>    
           </div>
       </div> 
-
-  <!-- Start of StatCounter Code for Default Guide -->
-  <script type="text/javascript">
-    var sc_project=10304038; 
-    var sc_invisible=1; 
-    var sc_security="03b3a4d8"; 
-    var scJsHost = (("https:" == document.location.protocol) ?
-    "https://secure." : "http://www.");
-    document.write("<sc"+"ript type='text/javascript' src='" +
-    scJsHost+
-    "statcounter.com/counter/counter.js'></"+"script>");
-  </script>
-  <noscript><div class="statcounter"><a title="web analytics"
-  href="http://statcounter.com/" target="_blank"><img
-  class="statcounter"
-  src="http://c.statcounter.com/10304038/0/03b3a4d8/1/"
-  alt="web analytics"></a></div></noscript>
-  <!-- End of StatCounter Code for Default Guide -->
+ 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCVzYqt4JIDK3C_xMQcNssaEKeDUxf45aA"></script>
   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
