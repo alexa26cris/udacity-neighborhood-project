@@ -23,5 +23,10 @@ var myLocations = [
       title: 'Hairstyliste Mali', 
       lat: 52.370228, 
       lng: 52.370228
+     },
+     {
+      title: 'Hizi Hair Almere Muziekwijk',
+      lat: 52.371222, 
+      lng: 5.216138 
      }
     ];
